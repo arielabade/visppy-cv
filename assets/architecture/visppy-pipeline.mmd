@@ -1,0 +1,26 @@
+flowchart LR
+    CAM[Camera or recorded video context]
+    OBS[CV observations<br/>people, objects, positions, confidence]
+    TRACK[Tracking and relinking<br/>raw IDs → stable trajectories]
+    ZONE[Spatial layer<br/>polygons, zones, heatmaps]
+    TEMP[Temporal layer<br/>occupancy, dwell, hotspots, forecast]
+    REPORT[Interactive HTML reports<br/>Plotly charts and narrative]
+    SHELL[React/Vite application shell<br/>dashboard selection and session UI]
+    HOST[Firebase Hosting<br/>static build + SPA rewrite]
+
+    CAM --> OBS
+    OBS --> TRACK
+    TRACK --> ZONE
+    TRACK --> TEMP
+    ZONE --> REPORT
+    TEMP --> REPORT
+    REPORT --> SHELL
+    SHELL --> HOST
+
+    classDef source fill:#F7F1E8,stroke:#1A1838,color:#181615;
+    classDef analysis fill:#FFF0DE,stroke:#D95F00,color:#1A1838;
+    classDef delivery fill:#1A1838,stroke:#FF7A1A,color:#F7F1E8;
+    class CAM source;
+    class OBS,TRACK,ZONE,TEMP analysis;
+
+    class REPORT,SHELL,HOST delivery;
