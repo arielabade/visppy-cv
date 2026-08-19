@@ -29,36 +29,6 @@
 
 </details>
 
-## Technologies & tools
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-synthetic%20example-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/YOLO-object%20detection-111111?style=flat-square" alt="YOLO">
-  <img src="https://img.shields.io/badge/Polars-data%20pipeline-CD792C?style=flat-square" alt="Polars">
-  <img src="https://img.shields.io/badge/Parquet-columnar%20storage-50ABF1?style=flat-square" alt="Parquet">
-  <img src="https://img.shields.io/badge/DuckDB-analytics-FFF000?style=flat-square&logo=duckdb&logoColor=111111" alt="DuckDB">
-  <img src="https://img.shields.io/badge/SQL-querying-336791?style=flat-square" alt="SQL">
-  <img src="https://img.shields.io/badge/React-dashboard-61DAFB?style=flat-square&logo=react&logoColor=111111" alt="React">
-  <img src="https://img.shields.io/badge/Vite-build-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/Plotly-visualization-3F4F75?style=flat-square" alt="Plotly">
-  <img src="https://img.shields.io/badge/Firebase-hosting-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase">
-  <img src="https://img.shields.io/badge/Mermaid-architecture-FF3670?style=flat-square" alt="Mermaid">
-</p>
-
-| Technology | Role in the portfolio | Evidence status |
-| --- | --- | --- |
-| Python | Synthetic flow aggregation example and analytical pipeline vocabulary | Example confirmed; production jobs not included |
-| YOLO | Object-detection technology referenced by the reports | Confirmed by report artifacts; exact checkpoint unavailable |
-| Polars | Columnar transformation option in the analytical pipeline | Mentioned in the public design; implementation not included |
-| Parquet | Structured storage boundary for observations and events | Confirmed by report/data vocabulary; source files not published |
-| SQL / DuckDB | Querying, aggregation, and object-summary analysis | Confirmed by examples and supplied CSV context |
-| React / Vite | Dashboard delivery shell | Confirmed by source/configuration evidence |
-| Plotly | Interactive report visualizations | Confirmed by report artifacts |
-| Firebase Hosting | Static application delivery | Confirmed by configuration evidence |
-| Mermaid | Architecture and reliability flow diagrams | Confirmed by repository assets |
-
-The GitHub **Languages** panel is calculated from committed file types, not from words mentioned in a README. YOLO is a computer-vision technology rather than a programming language. The repository includes a clearly labeled synthetic Python example so Python is represented without adding fake production code.
-
 ## Executive summary
 
 Visppy helps teams understand how people and objects occupy, move through, and interact with physical spaces. This repository presents the engineering story behind that product through computer-vision evidence, spatial analytics, and decision-oriented dashboards.
@@ -209,7 +179,7 @@ The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral
 - [Executive dashboard](assets/screenshots/dashboard-executive.png)
 - [Visual-slot index](assets/placeholders/README.md)
 
-The [safe public example](examples/safe-public-examples/observation-contract.json) and [synthetic flow aggregation example](examples/safe-public-examples/flow_aggregation.py) demonstrate public data contracts without exposing source footage, model weights, credentials, or proprietary inference code.
+The [safe public example](examples/safe-public-examples/observation-contract.json) is synthetic. It demonstrates the shape of an observation record without exposing source footage, model weights, credentials, or proprietary inference code.
 
 ## Scope and disclosure
 

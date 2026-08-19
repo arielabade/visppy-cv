@@ -1,6 +1,6 @@
 # Safe public examples
 
-The technical source checkout contains report artifacts, not a standalone detector or tracker implementation. This folder therefore documents the shape of a publishable example without copying proprietary code or real rows. The accompanying [`observation-contract.json`](observation-contract.json) and [`flow_aggregation.py`](flow_aggregation.py) are deliberately synthetic illustrations.
+The technical source checkout contains report artifacts, not a standalone detector or tracker implementation. This folder therefore documents the shape of a publishable example without copying proprietary code or real rows. The accompanying [`observation-contract.json`](observation-contract.json) is a deliberately synthetic illustration.
 
 ## Abstract observation contract
 
