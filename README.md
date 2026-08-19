@@ -10,6 +10,25 @@
   <img src="assets/brand/visppy-wordmark.png" alt="Visppy logo" width="560">
 </p>
 
+<details open>
+<summary><strong>Supporters &amp; Commercial Partners</strong></summary>
+
+<p align="center">Supporters, programs, and commercial partners associated with the project.</p>
+
+<table align="center">
+  <tr>
+    <td align="center"><img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/centelha-se.png" alt="Centelha SE" width="150"><br><sub>Centelha SE</sub></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/semente.png" alt="Semente" width="220"><br><sub>Semente</sub></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-startups.png" alt="Sebrae Startups" width="130"><br><sub>Sebrae Startups</sub></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-neon-2024.jpg" alt="Sebrae NEON 2024" width="250"><br><sub>Sebrae NEON 2024</sub></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/m360.jpg" alt="M360" width="75"><br><sub>M360</sub></td>
+  </tr>
+</table>
+
+</details>
+
 ## Executive summary
 
 Visppy helps teams understand how people and objects occupy, move through, and interact with physical spaces. This repository presents the engineering story behind that product through computer-vision evidence, spatial analytics, and decision-oriented dashboards.
@@ -159,43 +178,6 @@ The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral
 - [Reliability flow](assets/architecture/reliability-flow.mmd)
 - [Executive dashboard](assets/screenshots/dashboard-executive.png)
 - [Visual-slot index](assets/placeholders/README.md)
-
-<details open>
-<summary><strong>Supporters &amp; Commercial Partners</strong></summary>
-
-These marks represent the ecosystem of supporters, programs, and commercial partners associated with the project. The tab is expanded by default so the assets are visible while keeping the Visppy identity as the primary visual anchor.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/centelha-se.png" alt="Centelha SE" width="260">
-  <br>
-  <em>Centelha SE</em>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/semente.png" alt="Semente" width="420">
-  <br>
-  <em>Semente</em>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-startups.png" alt="Sebrae Startups" width="220">
-  <br>
-  <em>Sebrae Startups</em>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-neon-2024.jpg" alt="Sebrae NEON 2024" width="420">
-  <br>
-  <em>Sebrae NEON 2024</em>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/m360.jpg" alt="M360" width="120">
-  <br>
-  <em>M360</em>
-</p>
-
-</details>
 
 The [safe public example](examples/safe-public-examples/observation-contract.json) is synthetic. It demonstrates the shape of an observation record without exposing source footage, model weights, credentials, or proprietary inference code.
 
