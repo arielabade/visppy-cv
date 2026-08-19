@@ -28,6 +28,26 @@ Operational recommendations
 
 The upstream detector and tracker implementation is not included in this public portfolio checkout. Claims are therefore separated into confirmed evidence, visual evidence, and architectural inference.
 
+## High-level analytical flow
+
+The public architecture is intentionally high-level: it demonstrates the Computer Vision and Data Engineering boundary without exposing proprietary thresholds, calibration rules, customer-specific heuristics, or commercial logic.
+
+```mermaid
+flowchart TD
+    VIDEO[Video input] --> PROCESS[Frame extraction and preprocessing]
+    PROCESS --> DETECT[Object detection<br/>people and objects]
+    DETECT --> TRACK[Tracking and relinking<br/>temporary IDs and trajectories]
+    TRACK --> MAP[Spatial mapping<br/>zones and regions of interest]
+    MAP --> EVENTS[Event generation<br/>enter, exit, dwell, crossing, occupancy]
+    EVENTS --> DATA[Structured event data<br/>Parquet / SQL / DuckDB]
+    DATA --> ANALYTICS[Analytics layer<br/>flows, heatmaps, dwell, density]
+    ANALYTICS --> OUTPUT[Dashboard, API, and operational KPIs]
+    DATA --> QUALITY[Quality checks and uncertainty labels]
+    QUALITY --> ANALYTICS
+```
+
+After video is converted into structured events, historical analytics can operate on the event data without retaining the original video. This boundary reduces storage needs and makes analysis reproducible, queryable, and easier to audit.
+
 ## What is included
 
 | Capability | What this portfolio shows | Evidence status |
@@ -121,12 +141,13 @@ Selected report values: 2h03m21s analyzed, 12.7 visible people per frame on aver
 3. [Spatial analytics](docs/spatial-analytics.md) — zones, heatmaps, occupancy, transitions, and dwell time.
 4. [Video analytics](docs/video-analytics.md) — sampling, temporal windows, hotspots, and forecasting.
 5. [Data pipeline](docs/data-pipeline.md) — Parquet-oriented evidence model and analytical layers.
-6. [Infrastructure](docs/infrastructure.md) — the verified React/Vite/Firebase delivery layer.
-7. [Edge AI](docs/edge-ai.md) — what would need validation for edge or real-time deployment.
-8. [Product case study](docs/product-case-study.md) — problem, product decisions, and impact.
-9. [Technical decisions](docs/technical-decisions.md) — trade-offs and limitations.
-10. [Privacy and publication rules](docs/privacy.md) — what is intentionally excluded.
-11. [Evidence ledger](docs/evidence.md) — provenance and confidence labels.
+6. [Reliability flows](docs/architecture.md#reliability-oriented-flows) — validation, quality gates, and uncertainty boundaries.
+7. [Infrastructure](docs/infrastructure.md) — the verified React/Vite/Firebase delivery layer.
+8. [Edge AI](docs/edge-ai.md) — what would need validation for edge or real-time deployment.
+9. [Product case study](docs/product-case-study.md) — problem, product decisions, and impact.
+10. [Technical decisions](docs/technical-decisions.md) — trade-offs and limitations.
+11. [Privacy and publication rules](docs/privacy.md) — what is intentionally excluded.
+12. [Evidence ledger](docs/evidence.md) — provenance and confidence labels.
 
 ## Visual system
 
@@ -135,6 +156,7 @@ The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral
 - [Centered Visppy wordmark](assets/brand/visppy-wordmark.png)
 - [Visppy symbol](assets/brand/visppy-logo.png)
 - [Pipeline diagram](assets/architecture/visppy-pipeline.mmd)
+- [Reliability flow](assets/architecture/reliability-flow.mmd)
 - [Executive dashboard](assets/screenshots/dashboard-executive.png)
 - [Visual-slot index](assets/placeholders/README.md)
 

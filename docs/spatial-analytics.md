@@ -53,6 +53,39 @@ The most useful product move is to separate three questions:
 
 The reports answer the first question well, offer proxies for the second, and openly identify the instrumentation needed for the third: real entry lines, better zone semantics, camera changes, human validation and links to QR, CRM, POS or check-in signals.
 
+## Flow and heatmap derivation
+
+The spatial outputs can be explained without publishing camera calibration or proprietary transformation rules.
+
+```mermaid
+flowchart TD
+    TRACKS[Tracked positions over time] --> COORDS[Spatial coordinates]
+    COORDS --> ZONES[Zone assignment]
+    ZONES --> MOVES[Origin-destination movements]
+    ZONES --> DWELL[Dwell and retention intervals]
+    COORDS --> BINS[Coordinate bins]
+    BINS --> DENSITY[Observation counts by cell]
+    DENSITY --> HEATMAP[Heatmap]
+    MOVES --> FLOW[Flow map, Sankey, or OD matrix]
+```
+
+The key reliability boundary is that a heatmap measures concentration of observations in image space, while a flow measures transitions between configured regions. Neither one proves intent, conversion, or unique visitors without validated instrumentation.
+
+## Example movement model
+
+An origin-destination table may look like this at a conceptual level:
+
+```text
+origin_zone | destination_zone | movements
+Entrance    | Area A           | 1248
+Entrance    | Area B           | 754
+Area A      | Area C           | 612
+Area B      | Area C           | 320
+Area C      | Exit             | 811
+```
+
+These values are illustrative. In a production-quality flow, the table should retain the recording context, line or polygon definition, track continuity status, and an uncertainty or quality field.
+
 <!-- VISUAL SLOT: Spatial analytics board. Show an approved heatmap with polygon overlays, legend, zone names and one concise annotation per region. -->
 
 
