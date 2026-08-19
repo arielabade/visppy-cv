@@ -41,8 +41,3 @@ For a physical-space product, a useful recommendation is often time-bound:
 - protect a corridor during a high-pressure window;
 - compare a layout change by event phase rather than by one daily average;
 - schedule a new data-collection instrument where measurement quality drops.
-
-<!-- VISUAL SLOT: Temporal analytics. Add a real chart or short screen recording showing occupancy, a hotspot window and the decision it informs. -->
-
-
-<!-- VISUAL SLOT: Forecast validation. Add a chart with observed, predicted and baseline series plus the sample size and validation window. -->

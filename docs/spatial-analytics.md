@@ -85,8 +85,3 @@ Area C      | Exit             | 811
 ```
 
 These values are illustrative. In a production-quality flow, the table should retain the recording context, line or polygon definition, track continuity status, and an uncertainty or quality field.
-
-<!-- VISUAL SLOT: Spatial analytics board. Show an approved heatmap with polygon overlays, legend, zone names and one concise annotation per region. -->
-
-
-<!-- VISUAL SLOT: Trajectory visualization. Show a de-identified top-down or image-space path view with a note about relinking and re-entry. -->
