@@ -6,6 +6,10 @@
 
 **Live website:** [visppy.com](https://visppy.com)
 
+<p align="center">
+  <img src="assets/brand/visppy-wordmark.png" alt="Visppy logo" width="560">
+</p>
+
 ## Executive summary
 
 Visppy helps teams understand how people and objects occupy, move through, and interact with physical spaces. This repository presents the engineering story behind that product through computer-vision evidence, spatial analytics, and decision-oriented dashboards.
@@ -128,10 +132,48 @@ Selected report values: 2h03m21s analyzed, 12.7 visible people per frame on aver
 
 The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral indigo, signal orange, deep amber, mineral green, DM Sans for body text, and Space Grotesk for labels and interface accents. See [the visual system notes](docs/technical-decisions.md#visual-system).
 
-- [Visppy logo](assets/brand/visppy-logo.png)
+- [Centered Visppy wordmark](assets/brand/visppy-wordmark.png)
+- [Visppy symbol](assets/brand/visppy-logo.png)
 - [Pipeline diagram](assets/architecture/visppy-pipeline.mmd)
 - [Executive dashboard](assets/screenshots/dashboard-executive.png)
 - [Visual-slot index](assets/placeholders/README.md)
+
+<details>
+<summary><strong>Supporters &amp; Commercial Partners</strong></summary>
+
+These marks represent the ecosystem of supporters, programs, and commercial partners associated with the project. They are kept in a separate tab so the Visppy identity remains the primary visual anchor.
+
+<p align="center">
+  <img src="assets/partners/centelha-se.png" alt="Centelha SE" width="260">
+  <br>
+  <em>Centelha SE</em>
+</p>
+
+<p align="center">
+  <img src="assets/partners/semente.png" alt="Semente" width="420">
+  <br>
+  <em>Semente</em>
+</p>
+
+<p align="center">
+  <img src="assets/partners/sebrae-startups.png" alt="Sebrae Startups" width="220">
+  <br>
+  <em>Sebrae Startups</em>
+</p>
+
+<p align="center">
+  <img src="assets/partners/sebrae-neon-2024.jpg" alt="Sebrae NEON 2024" width="420">
+  <br>
+  <em>Sebrae NEON 2024</em>
+</p>
+
+<p align="center">
+  <img src="assets/partners/m360.jpg" alt="M360" width="120">
+  <br>
+  <em>M360</em>
+</p>
+
+</details>
 
 The [safe public example](examples/safe-public-examples/observation-contract.json) is synthetic. It demonstrates the shape of an observation record without exposing source footage, model weights, credentials, or proprietary inference code.
 
