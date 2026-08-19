@@ -160,37 +160,37 @@ The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral
 - [Executive dashboard](assets/screenshots/dashboard-executive.png)
 - [Visual-slot index](assets/placeholders/README.md)
 
-<details>
+<details open>
 <summary><strong>Supporters &amp; Commercial Partners</strong></summary>
 
-These marks represent the ecosystem of supporters, programs, and commercial partners associated with the project. They are kept in a separate tab so the Visppy identity remains the primary visual anchor.
+These marks represent the ecosystem of supporters, programs, and commercial partners associated with the project. The tab is expanded by default so the assets are visible while keeping the Visppy identity as the primary visual anchor.
 
 <p align="center">
-  <img src="assets/partners/centelha-se.png" alt="Centelha SE" width="260">
+  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/centelha-se.png" alt="Centelha SE" width="260">
   <br>
   <em>Centelha SE</em>
 </p>
 
 <p align="center">
-  <img src="assets/partners/semente.png" alt="Semente" width="420">
+  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/semente.png" alt="Semente" width="420">
   <br>
   <em>Semente</em>
 </p>
 
 <p align="center">
-  <img src="assets/partners/sebrae-startups.png" alt="Sebrae Startups" width="220">
+  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-startups.png" alt="Sebrae Startups" width="220">
   <br>
   <em>Sebrae Startups</em>
 </p>
 
 <p align="center">
-  <img src="assets/partners/sebrae-neon-2024.jpg" alt="Sebrae NEON 2024" width="420">
+  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/sebrae-neon-2024.jpg" alt="Sebrae NEON 2024" width="420">
   <br>
   <em>Sebrae NEON 2024</em>
 </p>
 
 <p align="center">
-  <img src="assets/partners/m360.jpg" alt="M360" width="120">
+  <img src="https://raw.githubusercontent.com/arielabade/visppy-cv/main/assets/partners/m360.jpg" alt="M360" width="120">
   <br>
   <em>M360</em>
 </p>
