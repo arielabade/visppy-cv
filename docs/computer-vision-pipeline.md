@@ -21,6 +21,25 @@ Frame sampling
 
 Only the last stages are implemented visibly in the supplied report artifacts. The first stages are evidenced by the metrics and labels those reports render.
 
+## Reliability checkpoints
+
+The pipeline becomes more trustworthy when each transformation has a visible contract:
+
+```mermaid
+flowchart LR
+    FRAME[Frame context] --> OBS[Detection observations]
+    OBS --> TRACK[Track continuity]
+    TRACK --> ZONE[Zone and geometry checks]
+    ZONE --> EVENT[Validated events]
+    EVENT --> AGG[Aggregated metrics]
+    AGG --> REPORT[Chart with provenance and caveats]
+    OBS -. low confidence .-> REVIEW[Review or exclude]
+    TRACK -. broken continuity .-> REVIEW
+    ZONE -. invalid assignment .-> REVIEW
+```
+
+Useful checks include frame and timestamp coverage, confidence distributions by zone, duplicate or impossible coordinates, track fragmentation, re-entry behavior, invalid polygon assignments, and missing context. These checks do not eliminate uncertainty; they make it visible before metrics become recommendations.
+
 ## Detection evidence
 
 | Signal | Example from the reports | Correct interpretation |

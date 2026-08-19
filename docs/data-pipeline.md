@@ -22,6 +22,52 @@ flowchart LR
 
 The report inventory names files such as `person_observations.parquet`, `object_detections.parquet`, `raw_yolo_detections.parquet`, `zone_transitions.parquet`, `line_crossings.parquet`, `interactions.parquet`, `environment_context.parquet` and `frame_context.parquet`. These names are evidence of the report’s analytical vocabulary, not files included in this public portfolio.
 
+## Structured event contract
+
+Once video observations have been converted into structured events, historical analytics can be queried without retaining the original video. A conceptual event record may contain:
+
+```text
+timestamp | camera_id | track_id | x | y | zone_id | event_type
+```
+
+Example records are illustrative only:
+
+```text
+2026-08-19 10:31:01 | cam_01 | 834 | 0.32 | 0.54 | entrance | enter
+2026-08-19 10:31:08 | cam_01 | 834 | 0.41 | 0.62 | hall     | enter
+2026-08-19 10:31:44 | cam_01 | 834 | 0.71 | 0.48 | stand_A | enter
+2026-08-19 10:32:20 | cam_01 | 834 | 0.73 | 0.49 | stand_A | exit
+```
+
+A partitioned layout could organize analytical history by date and camera:
+
+```text
+events/
+├── date=2026-08-18/
+│   ├── camera=01/events.parquet
+│   └── camera=02/events.parquet
+└── date=2026-08-19/
+    └── camera=01/events.parquet
+```
+
+This layout is a public design example, not a claim that these exact paths exist in the source application.
+
+## Flow queries
+
+Trajectories can be transformed into origin-destination movements and queried with SQL:
+
+```sql
+SELECT
+    origin_zone,
+    destination_zone,
+    COUNT(*) AS movements
+FROM movement_events
+GROUP BY origin_zone, destination_zone
+ORDER BY movements DESC;
+```
+
+The resulting table can feed Sankey diagrams, origin-destination matrices, spatial journeys, bottleneck analysis, and predominant-path views. The query should be paired with a definition of valid crossings and a note about relinking uncertainty.
+
 ## Derived layers
 
 | Layer | Example output | Safe portfolio statement |

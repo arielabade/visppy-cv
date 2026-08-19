@@ -25,6 +25,55 @@ flowchart LR
 ```
 
 The editable Mermaid source is available at [`assets/architecture/visppy-pipeline.mmd`](../assets/architecture/visppy-pipeline.mmd).
+The reliability-oriented source is available at [`assets/architecture/reliability-flow.mmd`](../assets/architecture/reliability-flow.mmd).
+
+## Public analytical flow
+
+The following flow translates the supplied portfolio proposal into a safe, implementation-agnostic architecture. It is deliberately specific about data boundaries and deliberately non-specific about proprietary model configuration.
+
+```mermaid
+flowchart TD
+    VIDEO[Video input] --> PROCESS[Video processing<br/>frame extraction and preprocessing]
+    PROCESS --> DETECT[Object detection<br/>people and objects]
+    DETECT --> TRACK[Object tracking<br/>temporary IDs, trajectories, movement history]
+    TRACK --> SPACE[Spatial mapping<br/>zones, ROIs, entry and exit areas]
+    SPACE --> EVENTS[Event generation<br/>zone enter, zone exit, dwell, crossing, occupancy]
+    EVENTS --> SCHEMA[Analytics event contract<br/>timestamp, camera, track, coordinates, zone, event type]
+    SCHEMA --> STORAGE[Data pipeline<br/>Python / Polars, Parquet, SQL / DuckDB]
+    STORAGE --> DERIVED[Derived analytics<br/>flows, heatmaps, occupancy, density, dwell]
+    DERIVED --> REPORT[Dashboard and operational KPIs]
+```
+
+This is a portfolio-level reconstruction of the analytical story. The current checkout verifies the report and delivery layers, but it does not contain the upstream jobs, weights, stream consumers, APIs, or orchestration that would implement every arrow.
+
+## Reliability-oriented flows
+
+Reliability is treated as a chain of explicit checks rather than as a property of the detector alone.
+
+```mermaid
+flowchart LR
+    INPUT[Input and camera context] --> CONTRACT[Schema and metadata validation]
+    CONTRACT --> DETECTION[Detection observations]
+    DETECTION --> TRACKING[Tracking and relinking]
+    TRACKING --> SPATIAL[Zone assignment and geometry checks]
+    SPATIAL --> EVENTS[Event contract validation]
+    EVENTS --> STORAGE[Partitioned analytical storage]
+    STORAGE --> QC[Quality checks<br/>coverage, confidence, continuity, missingness]
+    QC --> PUBLISH[Publish aggregate metrics]
+    QC --> REVIEW[Flag for review or quarantine]
+    REVIEW -.-> PUBLISH
+```
+
+Recommended reliability controls include:
+
+- validate camera, timestamp, frame-rate, and coordinate metadata before aggregation;
+- keep raw observations separate from derived events and executive metrics;
+- carry confidence, continuity, and missingness fields into downstream aggregates;
+- quarantine impossible coordinates, duplicate events, broken timestamps, and invalid zone assignments;
+- compare flow, dwell, and occupancy metrics only when the camera and sampling context are comparable;
+- attach provenance and caveats to every published chart or KPI.
+
+The controls above are portfolio recommendations unless explicitly marked as confirmed elsewhere in the evidence ledger.
 
 ## Evidence map
 
