@@ -6,8 +6,6 @@
 
 **Live website:** [visppy.com](https://visppy.com)
 
-![Visppy executive dashboard](assets/screenshots/dashboard-executive.png)
-
 ## Executive summary
 
 Visppy helps teams understand how people and objects occupy, move through, and interact with physical spaces. This repository presents the engineering story behind that product through computer-vision evidence, spatial analytics, and decision-oriented dashboards.
