@@ -14,7 +14,7 @@ Mandala, Loja and Palestra use different spatial models. The portfolio preserves
 
 ## 4. Measurement labels are part of the product
 
-The source reports use labels such as “Medido”, “Inferido”, “Não mensurado” and “Indisponível”. The portfolio keeps the same discipline. A recommendation can be valuable while still being a hypothesis.
+The source reports use explicit states equivalent to “Measured”, “Inferred”, “Not measured” and “Unavailable”. The portfolio keeps the same discipline. A recommendation can be valuable while still being a hypothesis.
 
 ## 5. Static report delivery with iframe isolation
 

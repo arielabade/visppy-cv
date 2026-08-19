@@ -72,7 +72,7 @@ Selected report values: 2h03m21s analyzed, 12.7 visible people per frame on aver
 10. [Privacy and publication rules](docs/privacy.md) — what is intentionally excluded from this derivative.
 11. [Evidence ledger](docs/evidence.md) — provenance and confidence labels.
 
-## Visual system
+## Visual system and asset plan
 
 The portfolio preserves the evidence-backed Visppy visual language: warm ivory surfaces, mineral indigo, signal orange, deep amber, mineral green, DM Sans for body text and Space Grotesk for labels and UI accents. See [the visual system notes](docs/technical-decisions.md#visual-system).
 
@@ -82,7 +82,9 @@ Real material currently included:
 - [Visppy logo](assets/brand/visppy-logo.png)
 - [Pipeline diagram](assets/architecture/visppy-pipeline.mmd)
 
-Intentional missing-material slots are documented in [assets/placeholders](assets/placeholders/).
+Intentional missing-material slots are documented in the [visual-slot index](assets/placeholders/README.md). Each slot states the technical concept, preferred format, suggested dimensions and privacy review required before publication.
+
+The [safe public example](examples/safe-public-examples/observation-contract.json) is synthetic. It demonstrates the shape of an observation record without exposing source rows, footage, model weights or proprietary code.
 
 ## Scope and disclosure
 
@@ -96,7 +98,9 @@ Claims are labeled as:
 - **Inferred** — a reasonable architecture interpretation, not a proven implementation detail.
 - **Portfolio recommendation** — a proposed next step, not a shipped capability.
 
+The source application contains client-side Firebase configuration and a client-side password hash. Neither is reproduced here.
+
 ## Status
 
 
-Portfolio foundation created from the current source evidence. The visual case study is intentionally incomplete until approved Computer Vision frames, tracking examples, architecture visuals and deployment material are available.
+Portfolio case study enriched from the current source evidence. The visual case study remains intentionally incomplete until approved Computer Vision frames, tracking examples, infrastructure visuals and deployment material are available.

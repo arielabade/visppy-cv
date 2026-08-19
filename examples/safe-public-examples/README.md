@@ -1,6 +1,6 @@
 # Safe public examples
 
-The technical source checkout contains report artifacts, not a standalone detector or tracker implementation. This folder therefore documents the shape of a publishable example without copying proprietary code or real rows.
+The technical source checkout contains report artifacts, not a standalone detector or tracker implementation. This folder therefore documents the shape of a publishable example without copying proprietary code or real rows. The accompanying [`observation-contract.json`](observation-contract.json) is a deliberately synthetic illustration.
 
 ## Abstract observation contract
 
@@ -25,6 +25,7 @@ This is a portfolio abstraction, not a claim about the exact production schema.
 - Label whether a value is measured, inferred or illustrative.
 - Include the scenario, frame cadence and known limitations.
 - Do not publish model weights, private code or credentials.
+- Keep synthetic examples clearly labeled as illustrative; they are not benchmarks or production samples.
 
 
 <!-- VISUAL SLOT: Add a tiny synthetic JSON/CSV sample only after the public data contract is approved. -->

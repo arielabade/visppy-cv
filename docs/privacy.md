@@ -12,6 +12,8 @@ This derivative does not copy:
 - full HTML reports with embedded data and Plotly bundles;
 - model weights, proprietary inference code or private commercial rules.
 
+The source checkout also contains client-side Firebase configuration and a client-side password hash. Even when a web configuration value is technically visible to browsers, it is not needed for this case study and is excluded from the public derivative. The portfolio does not reproduce the password flow or any credential-like value.
+
 ## Safe visual policy
 
 The current portfolio includes one existing dashboard screenshot and the brand logo because they contain no visible faces, camera credentials or private endpoint information in the inspected files. Any future screenshot should be reviewed for:
