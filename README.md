@@ -1,13 +1,13 @@
-# Visppy — Computer Vision & Spatial Intelligence
+# Visppy — Intelligence for Physical Spaces
 
-> A portfolio case study about turning video from physical spaces into operational, spatial, and behavioral signals.
+> Turn movement in physical spaces into clear decisions about layout, staffing, engagement, and operations.
 
 [![Visit visppy.com](https://img.shields.io/badge/Live%20site-visppy.com-24213f?style=flat-square)](https://visppy.com)
 
 **Live website:** [visppy.com](https://visppy.com)
 
 <p align="center">
-  <img src="assets/brand/visppy-wordmark.png" alt="Visppy logo" width="560">
+  <img src="assets/brand/visppy-wordmark.png" alt="Visppy logo" width="500">
 </p>
 
 <details open>
@@ -29,173 +29,111 @@
 
 </details>
 
-## Executive summary
+## What Visppy does
 
-Visppy helps teams understand how people and objects occupy, move through, and interact with physical spaces. This repository presents the engineering story behind that product through computer-vision evidence, spatial analytics, and decision-oriented dashboards.
+Visppy helps teams understand what is happening inside stores, activations, stands, lecture rooms, and other physical environments.
 
-```text
-Video and camera context
-            ↓
-Computer-vision observations
-            ↓
-Tracking, relinking, and spatial zones
-            ↓
-Occupancy, heatmaps, flows, and temporal signals
-            ↓
-Operational recommendations
-```
+It turns observed movement into answers such as:
 
-The upstream detector and tracker implementation is not included in this public portfolio checkout. Claims are therefore separated into confirmed evidence, visual evidence, and architectural inference.
+- Where does attention or congestion accumulate?
+- Which paths connect areas of the space?
+- Where do people stay, pass through, or disengage?
+- How should layout, staffing, signage, or measurement change?
 
-## High-level analytical flow
-
-The public architecture is intentionally high-level: it demonstrates the Computer Vision and Data Engineering boundary without exposing proprietary thresholds, calibration rules, customer-specific heuristics, or commercial logic.
+## From observation to action
 
 ```mermaid
-flowchart TD
-    VIDEO[Video input] --> PROCESS[Frame extraction and preprocessing]
-    PROCESS --> DETECT[Object detection<br/>people and objects]
-    DETECT --> TRACK[Tracking and relinking<br/>temporary IDs and trajectories]
-    TRACK --> MAP[Spatial mapping<br/>zones and regions of interest]
-    MAP --> EVENTS[Event generation<br/>enter, exit, dwell, crossing, occupancy]
-    EVENTS --> DATA[Structured event data<br/>Parquet / SQL / DuckDB]
-    DATA --> ANALYTICS[Analytics layer<br/>flows, heatmaps, dwell, density]
-    ANALYTICS --> OUTPUT[Dashboard, API, and operational KPIs]
-    DATA --> QUALITY[Quality checks and uncertainty labels]
-    QUALITY --> ANALYTICS
+flowchart LR
+    SPACE[Physical space] --> OBS[Observed people and objects]
+    OBS --> MOVEMENT[Movement, zones, dwell, and occupancy]
+    MOVEMENT --> INSIGHT[Flows, heatmaps, comparisons, and timing]
+    INSIGHT --> ACTION[Layout, staffing, activation, and measurement decisions]
 ```
 
-After video is converted into structured events, historical analytics can operate on the event data without retaining the original video. This boundary reduces storage needs and makes analysis reproducible, queryable, and easier to audit.
+The public portfolio shows the decision layer. It intentionally does not publish private implementation rules, customer-specific calibration, thresholds, credentials, or commercial logic.
 
-## What is included
+## What a client receives
 
-| Capability | What this portfolio shows | Evidence status |
-| --- | --- | --- |
-| Object detection | Object classes, confidence scores, area ratios, and interaction proxies | Confirmed by supplied data |
-| Tracking and relinking | Stable trajectories, fragmentation, dwell time, and re-entry caveats | Confirmed by report artifacts |
-| Spatial analytics | Polygons, heatmaps, occupancy, transitions, and zone comparisons | Confirmed by supplied visuals and reports |
-| Video analytics | Sampling, temporal windows, hotspots, and short-horizon forecasting | Confirmed by report artifacts |
-| Dashboard delivery | React/Vite shell, embedded reports, and Plotly visualizations | Confirmed by source code |
-| Public product presence | Link to the live Visppy website | Confirmed by external link |
+| Deliverable | Client question it supports |
+| --- | --- |
+| Zone map and heatmap | Where is visible demand concentrated? |
+| Flow and journey view | How do people move between areas? |
+| Occupancy and dwell view | Which areas retain attention or create pressure? |
+| Time-based analysis | When should the team act? |
+| Impact-versus-effort view | Which improvement should be tested first? |
+| Measurement roadmap | What signal is still needed to connect behavior to business results? |
 
-## Evidence snapshot
+## Case studies
 
-The included CSV is an aggregated object-summary snapshot, not raw video and not a visitor database:
+### Mandala — make circulation commercially useful
 
-| Measure | Value |
-| --- | ---: |
-| Class/zone rows | 63 |
-| Aggregated detections | 114,662 |
-| Potential interaction observations | 33,321 |
-| Highest-volume class | Chair — 78,283 detections |
-| Second-highest class | TV/screen — 31,229 detections |
-| Highest-volume zone | Left zone — 75,814 detections |
+The analysis identifies a circulation-heavy side of the stand, a transition toward the central screen, and a more consultative area. The recommended move is to test a clearer call to action and staffing at the transition without blocking the corridor.
 
-These values describe model observations. They should not be interpreted as unique people, unique visits, or causal measures of conversion.
+**Client takeaway:** distinguish passage from qualified attention before changing the activation.
 
-Download the [DuckDB object summary CSV](assets/data/duckdb-object-summary.csv).
+### Loja — separate traffic from retention
 
-## Visual evidence gallery
+The store analysis uses the real spatial layout instead of forcing a generic three-zone story. It separates outside flow, gateways, retention areas, and fixed structures so that entry, permanence, and operational friction can be discussed separately.
 
-The gallery uses English-localized derivatives generated from the supplied captures. Chart values, point positions, bar order, and flow structure were treated as invariants during localization; real-world signage visible inside photographs remains part of the original scene. Every caption, interpretation, and technical note in this README is in English.
+**Client takeaway:** measure the entrance and qualified permanence before claiming conversion.
 
-### Zone overlays and regional heatmaps
+### Palestra — interpret the room before the audience
+
+The lecture-room analysis treats a mostly stationary audience as expected behavior. It focuses on distribution, circulation, camera framing, and a limited short-horizon forecast rather than inferring attention or participation from stillness.
+
+**Client takeaway:** use room-specific signals and explicit participation events for events and presentations.
+
+## Visual evidence
+
+### Spatial zones and concentration
 
 ![Heatmap with zone overlays](assets/case-study/heatmap-zone-overlays.png)
 
-The polygon overlay makes the spatial contract explicit: each observation is interpreted relative to named regions such as store, panel, corridor, doorway, stand, and fountain. The heatmap adds concentration, but a hotspot still needs contextual interpretation because it may represent circulation, furniture, or a meaningful interaction.
+Zones make the conversation concrete: a hotspot can be a meaningful area, a corridor, furniture, or a waiting point. The visual must always be read with the layout.
 
 ![Regional heatmap](assets/case-study/heatmap-regional.png)
 
-The regional view separates left, central, and right areas and highlights the midline used for comparison. This supports consistent zone-level reporting while keeping the limitations of image-space measurement visible.
+The regional view supports consistent comparisons between left, central, and right areas.
 
-### Flows and movement structure
+### Journeys and movement
 
 ![Flow between zones](assets/case-study/zone-flow.png)
 
-The flow diagram summarizes transitions between left, central, and right regions. It is useful for comparing directional movement, but it should not be presented as an entrance/exit count without a validated line-crossing definition.
+Movement between regions helps teams compare paths and identify where a journey becomes concentrated.
 
 ![Internal flows](assets/case-study/internal-flows.png)
 
-The internal-flow view shows the doorway as a central connector, with the back area and corridor forming important circulation pairs. This is a route-level product insight: layout and placement influence how people move between operational areas.
+Internal flows show how a doorway, corridor, or back area can connect the wider journey.
 
-### Decisions and model quality
+### Prioritization and measurement quality
 
 ![Impact versus effort matrix](assets/case-study/impact-effort-matrix.png)
 
-The matrix prioritizes improvements by expected impact and implementation effort. QR + CRM + POS integration and multi-camera geometry are high-impact investments; clearer calls to action near the central area are comparatively easier experiments.
+The matrix translates observations into a practical order of experiments.
 
 ![Detection quality by zone](assets/case-study/detection-quality-by-zone.png)
 
-Detection quality varies by zone: the corridor scores highest at 0.62, while the panel is lowest at 0.08. Distance, scale, occlusion, and geometry make cross-zone comparisons unsafe unless the measurement conditions are normalized.
+Measurement quality varies by area. This is why comparisons should be made with the camera, distance, occlusion, and geometry in mind.
 
 ![Stable trajectories versus dwell](assets/case-study/zone-trajectories-vs-dwell.png)
 
-The trajectory-versus-dwell view separates volume from behavioral quality. The store attracts the longest continuous dwell, while the back area records the largest number of stable trajectories. These are different signals and should not be collapsed into one “best zone” score.
+Volume and quality are different signals: the busiest area is not automatically the most valuable one.
 
-## Case studies at a glance
+## Measurement boundaries
 
-### Mandala — commercial intelligence in a physical stand
+Visppy reports visible behavior and spatial patterns. Video alone does not prove unique visitors, identity, gaze, emotion, demographics, attention, conversion, sales, or return on investment.
 
-The report frames the right side as circulation-heavy, the center as a transition toward the screen, and the left side as more consultative. It explicitly separates measured signals from inference and unavailable signals.
+Reliable business conclusions require the right supporting signals, such as validated entry lines, check-in, QR events, customer records, point-of-sale events, human review, or approved operational context.
 
-Selected report values: 40,362 processed frames, 23 simultaneous visible people at peak, 10.9 visible people per frame on average, 7.50 analyzed frames per second, and 1,828 estimated stable IDs from 6,123 raw IDs. These are trajectory estimates, not unique visitors.
+## Privacy and safe publication
 
-### Loja — spatial analytics across eight effective zones
+The public portfolio excludes customer footage, identifiable people, private endpoints, credentials, raw observation files, model weights, and proprietary rules. See the [privacy and safe publication policy](docs/privacy.md).
 
-The store report adapts the narrative to the actual dataset instead of forcing a generic three-zone model. It distinguishes external flow, gateways, retention areas, and physical structures across eight effective zones.
+## Further reading
 
-Selected report values: 76,242 frames, approximately 150 minutes of coverage, 20,547 event-triggered segmentation masks across 897 frames, and a zone table covering occupancy, peaks, trajectories, dwell time, and heuristic staff presence.
+- [Product case study](docs/product-case-study.md) — the problem, product response, and decision stories.
+- [Spatial analytics](docs/spatial-analytics.md) — zones, heatmaps, flows, dwell, and interpretation limits.
+- [Video analytics](docs/video-analytics.md) — timing, peaks, phases, and forecasting boundaries.
+- [High-level architecture](docs/architecture.md) — the public flow from space to decision.
 
-### Palestra — occupancy and circulation in a lecture room
-
-The lecture report treats a mostly stationary audience as expected behavior rather than noise. It uses spatial distribution, circulation, camera framing, and a limited next-minute occupancy forecast. Participation and conversion require explicit signals such as QR scans, check-in, or CRM events.
-
-Selected report values: 2h03m21s analyzed, 12.7 visible people per frame on average, 23 at peak, 40.4% of observed occupancy on the left, and a one-test forecast comparison with mean error 1.04 versus 1.41 for a simple baseline.
-
-## Engineering story
-
-1. [Architecture](docs/architecture.md) — evidence-based system map and scope boundaries.
-2. [Computer-vision pipeline](docs/computer-vision-pipeline.md) — detection, tracking, and safe claims.
-3. [Spatial analytics](docs/spatial-analytics.md) — zones, heatmaps, occupancy, transitions, and dwell time.
-4. [Video analytics](docs/video-analytics.md) — sampling, temporal windows, hotspots, and forecasting.
-5. [Data pipeline](docs/data-pipeline.md) — Parquet-oriented evidence model and analytical layers.
-6. [Reliability flows](docs/architecture.md#reliability-oriented-flows) — validation, quality gates, and uncertainty boundaries.
-7. [Infrastructure](docs/infrastructure.md) — the verified React/Vite/Firebase delivery layer.
-8. [Edge AI](docs/edge-ai.md) — what would need validation for edge or real-time deployment.
-9. [Product case study](docs/product-case-study.md) — problem, product decisions, and impact.
-10. [Technical decisions](docs/technical-decisions.md) — trade-offs and limitations.
-11. [Privacy and publication rules](docs/privacy.md) — what is intentionally excluded.
-12. [Evidence ledger](docs/evidence.md) — provenance and confidence labels.
-
-## Visual system
-
-The portfolio preserves the Visppy visual language: warm ivory surfaces, mineral indigo, signal orange, deep amber, mineral green, DM Sans for body text, and Space Grotesk for labels and interface accents. See [the visual system notes](docs/technical-decisions.md#visual-system).
-
-- [Centered Visppy wordmark](assets/brand/visppy-wordmark.png)
-- [Visppy symbol](assets/brand/visppy-logo.png)
-- [Pipeline diagram](assets/architecture/visppy-pipeline.mmd)
-- [Reliability flow](assets/architecture/reliability-flow.mmd)
-- [Executive dashboard](assets/screenshots/dashboard-executive.png)
-- [Visual-slot index](assets/placeholders/README.md)
-
-The [safe public example](examples/safe-public-examples/observation-contract.json) is synthetic. It demonstrates the shape of an observation record without exposing source footage, model weights, credentials, or proprietary inference code.
-
-## Scope and disclosure
-
-This is a curated portfolio derivative, not a mirror of the private application and not a runnable copy of its source repository. It does not include credentials, Firebase configuration, customer footage, source Parquet files, full HTML reports, embedded Plotly bundles, private endpoints, or proprietary upstream inference code.
-
-Claims are labeled as:
-
-- **Confirmed by source code** — visible in the React/Vite or hosting files.
-- **Confirmed by report artifact** — stated or rendered by supplied reports.
-- **Confirmed by visual asset** — visible in a supplied image or logo.
-- **Inferred** — a reasonable architecture interpretation, not a proven implementation detail.
-- **Portfolio recommendation** — a proposed next step, not a shipped capability.
-- **Not confirmed** — no supporting evidence was found in the inspected checkout.
-
-The source application contains client-side Firebase configuration and a client-side password hash. Neither is reproduced here.
-
-## Status
-
-Portfolio case study enriched with the supplied visual evidence, translated English narrative, and the CSV data snapshot. The implementation remains intentionally scoped to public documentation and safe derivative assets.
+For the product itself, visit [visppy.com](https://visppy.com).

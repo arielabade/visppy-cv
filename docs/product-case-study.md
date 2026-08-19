@@ -51,6 +51,3 @@ It does not support claims of unique visitors, gaze, emotion, demographics, prov
 | Did someone engage? | Dwell and heuristic approach | Human validation, QR, interaction event |
 | Did the activation convert? | None in current reports | CRM, POS, lead or order timestamp |
 | Did the model improve? | Confidence, quality and fragmentation | Labeled benchmark set and recurring evaluation |
-
-
-<!-- VISUAL SLOT: Product demo. Add a 30–60 second screen recording that follows one question from heatmap to recommendation. -->

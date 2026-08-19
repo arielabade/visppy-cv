@@ -1,43 +1,29 @@
-# Privacy, security and publication rules
+# Privacy and safe publication
 
-## Materials intentionally excluded
+Visppy works with signals from physical spaces. The public portfolio is designed to explain the product without exposing people, customers, or private operating details.
 
-This derivative does not copy:
+## What is not published
 
-- Firebase configuration, API keys or authentication details;
-- environment files, secrets, private endpoints or network addresses;
-- camera credentials or RTSP URLs;
-- source Parquet files or row-level observations;
-- customer video, identifiable people or private footage;
-- full HTML reports with embedded data and Plotly bundles;
-- model weights, proprietary inference code or private commercial rules.
+The portfolio does not include:
 
-The source checkout also contains client-side Firebase configuration and a client-side password hash. Even when a web configuration value is technically visible to browsers, it is not needed for this case study and is excluded from the public derivative. The portfolio does not reproduce the password flow or any credential-like value.
+- customer footage or identifiable people;
+- private endpoints, credentials, access details, or camera addresses;
+- raw observation records or private reports;
+- model weights, proprietary rules, or customer-specific calibration;
+- information that could be used to reconstruct a private venue or operation.
 
-## Safe visual policy
+## How to read the analytics
 
-The current portfolio includes one existing dashboard screenshot and the brand logo because they contain no visible faces, camera credentials or private endpoint information in the inspected files. Any future screenshot should be reviewed for:
+The reports describe visible behavior and spatial patterns. They do not, by themselves, prove:
 
-1. faces, names, badges, license plates or other identifiers;
-2. customer, event or venue names;
-3. URLs, tokens, project IDs or internal filenames;
-4. row-level metrics that were not approved for publication;
-5. camera placement details that create a security concern.
+- unique visitors or identity;
+- gaze, emotion, age, gender, or attention;
+- confirmed interaction with a product or screen;
+- conversion, sales, revenue attribution, or return on investment;
+- real-time performance outside the validated measurement context.
 
-## Analytics claims
+Business conclusions become stronger when movement signals are combined with approved context such as check-in, QR events, customer records, point-of-sale events, or human review.
 
-The reports themselves model uncertainty. The portfolio therefore avoids presenting the following as proven capabilities:
+## Visual review policy
 
-- unique visitor counting;
-- identity or re-identification of real people;
-- gaze, emotion, age or gender estimation;
-- confirmed screen or product interaction;
-- entry/exit counting from an internal line;
-- conversion, sales or ROI attribution without explicit business signals;
-- metric-world speed without homography;
-- real-time or edge processing without deployment evidence.
-
-## Public repository hygiene
-
-
-The `.gitignore` blocks environment files, keys, certificates, logs, build outputs and private directories. New assets should be added only after a human privacy and intellectual-property review.
+Every public image should be checked for faces, names, badges, license plates, customer or venue identifiers, private URLs, internal filenames, and sensitive layout details before publication.
