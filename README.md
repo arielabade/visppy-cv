@@ -56,7 +56,7 @@ Download the [DuckDB object summary CSV](assets/data/duckdb-object-summary.csv).
 
 ## Visual evidence gallery
 
-The source captures are preserved as visual evidence. Their original chart labels remain unchanged; every caption, interpretation, and technical note in this README is in English.
+The gallery uses English-localized derivatives generated from the supplied captures. Chart values, point positions, bar order, and flow structure were treated as invariants during localization; real-world signage visible inside photographs remains part of the original scene. Every caption, interpretation, and technical note in this README is in English.
 
 ### Zone overlays and regional heatmaps
 
