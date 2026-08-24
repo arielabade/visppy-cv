@@ -29,6 +29,15 @@
 
 </details>
 
+## Recognition
+
+### Centelha Sergipe III — preliminary Phase 2 result
+
+The project now presented as **Visppy** was evaluated under its former name, **Imagyx: monitoramento visual de espaços coletivos por IA**, with **Ariel Lima Abade Bandeira** as the proponent. In the official preliminary Phase 2 result, it appears among the **100 projects selected for the next stage** and among the **47 projects approved in the general classification**.
+
+- [Read the official FAPITEC announcement](https://fapitec.se.gov.br/saiu-o-resultado-preliminar-da-fase-02-do-programa-centelha/)
+- [Open the official classification PDF](https://fapitec.se.gov.br/wp-content/uploads/2026/04/Resultado-Preliminar-da-FASE-2-CENTELHA-SE.pdf)
+
 ## What Visppy does
 
 Visppy helps teams understand what is happening inside stores, activations, stands, lecture rooms, and other physical environments.
