@@ -162,12 +162,9 @@ This repository documents a product. It also sits in a wider portfolio built aro
 movement: turning observed signal into structured, reusable decisions.
 
 Visppy keeps its own visual identity throughout. The portfolio frame is deliberately monochrome so
-that nothing competes with it. The open lab layer — the event model and reasoning, without customer
-footage or proprietary rules — is published separately.
+that nothing competes with it.
 
 <p align="center">
-  <a href="https://github.com/arielabade/visppy-cv-lab">Open lab layer: Visppy CV Lab</a>
-  &nbsp;·&nbsp;
   <a href="https://github.com/arielabade">Portfolio overview</a>
   &nbsp;·&nbsp;
   <a href="https://visppy.com">visppy.com</a>
