@@ -146,3 +146,29 @@ The public portfolio excludes customer footage, identifiable people, private end
 - [High-level architecture](docs/architecture.md) — the public flow from space to decision.
 
 For the product itself, visit [visppy.com](https://visppy.com).
+
+---
+
+## Portfolio context
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/brand/chain-dark.svg">
+    <img alt="Product track: physical space, observed movement, spatial intelligence, operational decision" src="assets/brand/chain-light.svg" width="100%">
+  </picture>
+</p>
+
+This repository documents a product. It also sits in a wider portfolio built around one
+movement: turning observed signal into structured, reusable decisions.
+
+Visppy keeps its own visual identity throughout. The portfolio frame is deliberately monochrome so
+that nothing competes with it. The open lab layer — the event model and reasoning, without customer
+footage or proprietary rules — is published separately.
+
+<p align="center">
+  <a href="https://github.com/arielabade/visppy-cv-lab">Open lab layer: Visppy CV Lab</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/arielabade">Portfolio overview</a>
+  &nbsp;·&nbsp;
+  <a href="https://visppy.com">visppy.com</a>
+</p>
